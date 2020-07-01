@@ -20,10 +20,10 @@ const INITIAL_STATE = {
     },
     {
       title: 'womens',
-      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+      imageUrl: 'https://i.ibb.co/ThGFbBS/woman-beach.jpg',
       size: 'large',
       id: 4,
-      linkUrl: 'shop/mens'
+      linkUrl: 'shop/womens'
     },
     {
       title: 'mens',
