@@ -140,37 +140,74 @@ const SHOP_DATA = {
       }
     ]
   },
+  womens: {
+    id: 4,
+    title: 'Womens',
+    routeName: 'womens',
+    items: [
+      {
+        id: 23,
+        name: 'Striped Black and White Dress',
+        imageUrl: 'https://i.ibb.co/48YtrqY/A-woman-on-the-road-dressed-in-a-black-and-white-stripped-dress.jpg',
+        price: 200
+      },
+      {
+        id: 24,
+        name: 'Brown Long Skirt',
+        imageUrl: 'https://i.ibb.co/Tm7SzDk/woman-next-to-wall.jpg',
+        price: 190
+      },
+      {
+        id: 25,
+        name: 'Purple Dress',
+        imageUrl: 'https://i.ibb.co/1Tk139m/woman-purple-dress.jpg',
+        price: 165
+      },
+      {
+        id: 26,
+        name: 'White Sweater',
+        imageUrl: 'https://i.ibb.co/02sX8DF/woman-in-sweater.jpg',
+        price: 185
+      },
+      {
+        id: 27,
+        name: 'Red Dress',
+        imageUrl: 'https://i.ibb.co/LQKqqv4/woman-red-dress.jpg',
+        price: 220
+      }
+    ]
+  },
   mens: {
     id: 5,
     title: 'Mens',
     routeName: 'mens',
     items: [
       {
-        id: 23,
+        id: 28,
         name: 'Floral T-shirt',
         imageUrl: 'https://i.ibb.co/qMQ75QZ/floral-shirt.png',
         price: 20
       },
       {
-        id: 24,
+        id: 29,
         name: 'Black & White Longsleeve',
         imageUrl: 'https://i.ibb.co/55z32tw/long-sleeve.png',
         price: 25
       },
       {
-        id: 25,
+        id: 30,
         name: 'Pink T-shirt',
         imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
         price: 25
       },
       {
-        id: 26,
+        id: 31,
         name: 'Jean Long Sleeve',
         imageUrl: 'https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png',
         price: 40
       },
       {
-        id: 27,
+        id: 32,
         name: 'Burgundy T-shirt',
         imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
         price: 25
