@@ -13,9 +13,12 @@ import CartDropdown from '../CartDropdown/CartDropdown';
 
 const Header = ({ currentUser, hidden }) => (
   <div className='header'>
-    <Link className='logo-container' to='/'>
-      <Logo className='logo' />
-    </Link>
+    <div className='logo-home-container'>
+      <Link className='logo-container' to='/'>
+        <Logo className='logo' />
+        <div className='home'>HOME</div>
+      </Link>
+    </div>
     <div className='options'>
       <Link className='option' to='/shop'>SHOP</Link>
       <Link className='option' to='/contact'>CONTACT</Link>
