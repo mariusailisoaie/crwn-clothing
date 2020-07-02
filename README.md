@@ -7,6 +7,7 @@ Website for a personal clothing store project.
 This app is deployed on:
 
 [Netlify](https://crwn-clothing-copenhagen.netlify.app/)
+
 [Heroku](https://crown-clothing-copenhagen.herokuapp.com/)
 
 **Note: The Heroku version uses free dynos and might take 10-15 seconds until the server starts and serves the app!**
