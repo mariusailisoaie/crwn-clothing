@@ -7,10 +7,10 @@ export const collectionsSelector = createSelector([shopSelector], shop => shop.c
 
 export const collectionsPreviewSelector = createSelector(
   [collectionsSelector],
-  collections => Object.keys(collections).map(key => collections[key])
+  collections => collections ? Object.keys(collections).map(key => collections[key]) : []
 );
 
 export const collectionSelector = memoize(collectionId => createSelector(
   [collectionsSelector],
-  collections => collections[collectionId]
+  collections => collections ? collections[collectionId] : null
 ));
