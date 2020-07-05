@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
-import CollectionsOverview from '../CollectionsOverview/CollectionsOverview';
-import Collection from '../../pages/Collection/Collection';
-import WithSpinner from '../WithSpinner/WithSpinner';
+import CollectionsOverview from '../../components/CollectionsOverview/CollectionsOverview';
+import Collection from '../Collection/Collection';
+import WithSpinner from '../../components/WithSpinner/WithSpinner';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
