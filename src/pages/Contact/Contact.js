@@ -17,9 +17,10 @@ const Contact = () => (
         <span className='position'>Software Developer</span>
         <a className='profile-button' href='https://www.linkedin.com/in/marius-ailisoaie/'>View profile</a>
         <a className='linkedin-logo' href='https://www.linkedin.com/in/marius-ailisoaie/'>
-          <img src='https://static-exp1.licdn.com/scds/common/u/images/logos/linkedin/logo_linkedin_93x21_v2.png' alt='linkedin-icon' srcset='' />
+          <img src='https://static-exp1.licdn.com/scds/common/u/images/logos/linkedin/logo_linkedin_93x21_v2.png' alt='linkedin-icon' />
         </a>
       </div>
+
     </div>
   </div>
 )
