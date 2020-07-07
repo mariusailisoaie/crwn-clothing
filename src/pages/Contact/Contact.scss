@@ -1,9 +1,77 @@
 .contact-page {
-  width: 380px;
+  width: 280px;
   margin: 0 auto;
   text-align: center;
 
   .get-in-touch {
     margin: 50px 0;
+  }
+
+  .linkedin-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.24);
+
+    .linkedin-card-top {
+      width: 100%;
+      height: 170px;
+
+      .linkedin-background {
+        width: 100%;
+        height: 100px;
+      }
+
+      .profile-picture {
+        position: relative;
+        top: -50px;
+        width: 120px;
+        height: 120px;
+        border: 4px solid white;
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+    }
+
+    .linkedin-card-bottom {
+      height: 205px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      .name {
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.7);
+        text-decoration: none;
+        letter-spacing: 1px;
+
+        &:hover {
+          color: #005e93;
+        }
+      }
+
+      .position {
+        font-size: 18px;
+        line-height: 16px;
+      }
+
+      .profile-button {
+        width: 100px;
+        margin: 0 auto;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        padding: 5px;
+        border: 1px solid #007BB6;
+        border-radius: 3px;
+        color: #007BB6;
+
+        &:hover {
+          color: #005e93;
+          border-color: #005e93;
+        }
+      }
+    }
   }
 }
