@@ -6,8 +6,7 @@ import './SignIn.scss';
 import FormInput from '../FormInput/FormInput';
 import CustomButton from '../CustomButton/CustomButton';
 
-import { auth } from '../../firebase/firebase.utils';
-import { googleSignInStart } from '../../actions/userActions';
+import { googleSignInStart, emailSignInStart } from '../../actions/userActions';
 
 class SignIn extends Component {
   constructor(props) {
@@ -23,13 +22,9 @@ class SignIn extends Component {
     e.preventDefault();
 
     const { email, password } = this.state;
+    const { emailSignInStart } = this.props;
 
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-      this.setState({ email: '', password: '' });
-    } catch (error) {
-      console.log(error);
-    }
+    emailSignInStart(email, password);
 
     this.setState({ email: '', password: '' });
   }
@@ -78,6 +73,7 @@ class SignIn extends Component {
 
 const mapDispatchToProps = dispatch => ({
   googleSignInStart: () => dispatch(googleSignInStart()),
+  emailSignInStart: (email, password) => dispatch(emailSignInStart({ email, password })),
 });
 
 export default connect(null, mapDispatchToProps)(SignIn);
