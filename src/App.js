@@ -12,29 +12,12 @@ import Contact from './pages/Contact/Contact';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { currentUserSelector } from './selectors/userSelector';
+import { checkUserSession } from './actions/userActions';
 
 class App extends Component {
-  unsubscribeFromAuth = null;
-
   componentDidMount() {
-    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-    //   if (userAuth) {
-    //     const userRef = await createUserProfileDocument(userAuth);
-
-    //     userRef.onSnapshot(snapshot => {
-    //       setCurrentUser({
-    //         id: snapshot.id,
-    //         ...snapshot.data(),
-    //       });
-    //     });
-    //   } else {
-    //     setCurrentUser(userAuth);
-    //   }
-    // });
-  }
-
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
+    const { checkUserSession } = this.props;
+    checkUserSession();
   }
 
   render() {
@@ -57,4 +40,8 @@ const mapStateToProps = createStructuredSelector({
   currentUser: currentUserSelector,
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  checkUserSession: () => dispatch(checkUserSession()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
