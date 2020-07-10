@@ -3,6 +3,16 @@ body {
   padding: 20px 60px;
 }
 
+.react-notification-root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+#root>div>div.react-notification-root>div.notification-container-top-center>div>div>div>div.notification-close.notification-close::after {
+  font-size: 18px;
+}
+
 a {
   text-decoration: none;
   color: #000;
