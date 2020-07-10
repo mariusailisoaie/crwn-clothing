@@ -7,7 +7,6 @@ import { signInSuccess, signInFailure, signOutSuccess, signOutFailure, signUpFai
 import { auth, googleProvider, getCurrentUser, createUserProfileDocument } from '../firebase/firebase.utils';
 
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
-  console.log('log: function*getSnapshotFromUserAuth -> additionalData', additionalData);
   try {
     const userRef = yield call(createUserProfileDocument, userAuth, additionalData);
     const userSnapshot = yield userRef.get();
