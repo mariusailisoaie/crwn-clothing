@@ -8,6 +8,7 @@ import Shop from './pages/Shop/Shop';
 import SignInAndSignUp from './pages/SignInAndSignUp/SignInAndSignUp';
 import Checkout from './pages/Checkout/Checkout';
 import Contact from './pages/Contact/Contact';
+import ReactNotification from 'react-notifications-component';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -23,6 +24,8 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
+        <ReactNotification />
+
         <Header />
         <Switch>
           <Route exact path='/' component={ HomePage } />
