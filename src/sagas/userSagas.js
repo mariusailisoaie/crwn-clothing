@@ -15,6 +15,7 @@ export function* getSnapshotFromUserAuth(userAuth, additionalData) {
     yield put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
   } catch (error) {
     yield put(signInFailure(error));
+    yield addNotification(`${ error.code.split('/')[1].replace(/-/g, ' ') }!`, error.message, 'danger', 'top', 'top-center', 'headShake', 'fadeOut', 4500, true);
   }
 }
 
@@ -38,7 +39,7 @@ export function* onSignUpStart() {
 }
 
 export function* onSignUpSuccess() {
-  yield takeLatest(UserActionTypes.SIGN_UP_SUCCESS, signInAfterSignUp)
+  yield takeLatest(UserActionTypes.SIGN_UP_SUCCESS, signInAfterSignUp);
 }
 
 export function* signInWIthGoogle() {
@@ -47,6 +48,7 @@ export function* signInWIthGoogle() {
     yield getSnapshotFromUserAuth(user);
   } catch (error) {
     yield put(signInFailure(error));
+    yield addNotification(`${ error.code.split('/')[1].replace(/-/g, ' ') }!`, error.message, 'danger', 'top', 'top-center', 'headShake', 'fadeOut', 4500, true);
   }
 }
 
@@ -60,6 +62,7 @@ export function* signInWithEmail({ payload: { email, password } }) {
     yield getSnapshotFromUserAuth(user);
   } catch (error) {
     yield put(signInFailure(error));
+    yield addNotification(`${ error.code.split('/')[1].replace(/-/g, ' ') }!`, error.message, 'danger', 'top', 'top-center', 'headShake', 'fadeOut', 4500, true);
   }
 }
 
@@ -74,6 +77,7 @@ export function* isUserAuthenticated() {
     yield getSnapshotFromUserAuth(userAuth);
   } catch (error) {
     yield put(signInFailure(error));
+    yield addNotification(`${ error.code.split('/')[1].replace(/-/g, ' ') }!`, error.message, 'danger', 'top', 'top-center', 'headShake', 'fadeOut', 4500, true);
   }
 }
 
@@ -87,6 +91,7 @@ export function* signOut() {
     yield put(signOutSuccess());
   } catch (error) {
     yield put(signOutFailure(error));
+    yield addNotification(`${ error.code.split('/')[1].replace(/-/g, ' ') }!`, error.message, 'danger', 'top', 'top-center', 'headShake', 'fadeOut', 4500, true);
   }
 }
 
