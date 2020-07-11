@@ -6,6 +6,8 @@ import { signInSuccess, signInFailure, signOutSuccess, signOutFailure, signUpFai
 
 import { auth, googleProvider, getCurrentUser, createUserProfileDocument } from '../firebase/firebase.utils';
 
+import addNotification from '../utils/notifications.utils';
+
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
   try {
     const userRef = yield call(createUserProfileDocument, userAuth, additionalData);
@@ -20,8 +22,10 @@ export function* signUp({ payload: { displayName, email, password } }) {
   try {
     const { user } = yield auth.createUserWithEmailAndPassword(email, password);
     yield put(signUpSuccess({ user, additionalData: { displayName } }));
+    yield addNotification('Success!', 'Your account has been created successfully!', 'success', 'top', 'top-center', 'fadeIn', 'fadeOut', 4500, true);
   } catch (error) {
     yield put(signUpFailure(error));
+    yield addNotification(`${ error.code.split('/')[1].replace('-', ' ') }!`, error.message, 'danger', 'top', 'top-center', 'headShake', 'fadeOut', 4000, true);
   }
 }
 
