@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 
 import './SignUp.scss';
 
-import { store } from 'react-notifications-component';
-import 'react-notifications-component/dist/scss/notification.scss';
-import 'animate.css';
+import addNotification from '../../utils/notifications.utils';
 
 import FormInput from '../FormInput/FormInput';
 import CustomButton from '../CustomButton/CustomButton';
@@ -26,19 +24,7 @@ const SignUp = ({ signUpStart }) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      store.addNotification({
-        title: 'Oops!',
-        message: 'Passwords don\'t match',
-        type: 'danger',
-        insert: 'top',
-        container: 'top-center',
-        animationIn: ['animate__animated', 'animate__headShake'],
-        animationOut: ['animate__animated', 'animate__fadeOut'],
-        dismiss: {
-          duration: 4000,
-          showIcon: true,
-        }
-      });
+      addNotification('Oops!', 'Passwords don\'t match', 'danger', 'top', 'top-center', 'headShake', 'fadeOut', 4000, true);
       return;
     }
 
