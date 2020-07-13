@@ -36,7 +36,8 @@ const StripeButton = ({ price }) => {
       name='CRWN Clothing ApS'
       billingAddress
       shippingAddress
-      description={ `Your total is $${ price }` }
+      description={ `Your total is ${ price } dkk` }
+      currency='dkk'
       amount={ priceForStripe }
       panelLabel='Pay now'
       token={ onToken }
