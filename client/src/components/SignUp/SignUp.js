@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './SignUp.scss';
 
-import addNotification from '../../utils/notifications.utils';
+import { addNotification } from '../../utils/notifications.utils';
 
 import FormInput from '../FormInput/FormInput';
 import CustomButton from '../CustomButton/CustomButton';

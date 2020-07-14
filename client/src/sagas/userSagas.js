@@ -6,7 +6,7 @@ import { signInSuccess, signInFailure, signOutSuccess, signOutFailure, signUpFai
 
 import { auth, googleProvider, getCurrentUser, createUserProfileDocument } from '../firebase/firebase.utils';
 
-import addNotification from '../utils/notifications.utils';
+import { addNotification } from '../utils/notifications.utils';
 
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
   try {
