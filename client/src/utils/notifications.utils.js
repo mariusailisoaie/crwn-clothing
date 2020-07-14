@@ -2,7 +2,7 @@ import { store } from 'react-notifications-component';
 import 'react-notifications-component/dist/scss/notification.scss';
 import 'animate.css';
 
-const addNotification = (title, message, type, insert, container, animationIn, animationOut, duration, showIcon) => store.addNotification({
+export const addNotification = (title, message, type, insert, container, animationIn, animationOut, duration, showIcon) => store.addNotification({
   title,
   message,
   type,
@@ -16,4 +16,4 @@ const addNotification = (title, message, type, insert, container, animationIn, a
   }
 });
 
-export default addNotification;
+export const removeNotification = id => store.removeNotification(id);
