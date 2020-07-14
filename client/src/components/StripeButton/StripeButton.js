@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 import StripeCheckout from 'react-stripe-checkout';
 
-import addNotification from '../../utils/notifications.utils';
+import { addNotification, removeNotification } from '../../utils/notifications.utils';
 
 import axios from 'axios';
 
@@ -16,10 +16,13 @@ const StripeButton = ({ price, clearCart, history }) => {
   const publishableKey = 'pk_test_4gu0fGuFiI84EiPVCku1iKQK';
 
   const onToken = token => {
+    const id = addNotification('Please wait.', 'We are processing your payment.', 'info', 'top', 'top-center', 'fadeIn', 'fadeOut', 5000, true);
+
     axios.post('payments', { token, amount: priceForStripe })
       .then(res => {
         clearCart();
         history.push('/');
+        removeNotification(id);
         addNotification('Success!', 'Your payment was successful!', 'success', 'top', 'top-center', 'fadeIn', 'fadeOut', 5000, true);
       }).catch(err => {
         addNotification(
