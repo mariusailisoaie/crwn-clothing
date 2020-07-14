@@ -47,7 +47,7 @@ const StripeButton = ({ price, clearCart, history }) => {
       billingAddress
       shippingAddress
       description={ `Your total is ${ price } dkk` }
-      currency='dkk'
+      currency='DKK'
       amount={ priceForStripe }
       panelLabel='Pay now'
       token={ onToken }
