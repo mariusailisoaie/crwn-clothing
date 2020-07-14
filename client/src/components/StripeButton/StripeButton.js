@@ -1,18 +1,25 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 import StripeCheckout from 'react-stripe-checkout';
 
 import addNotification from '../../utils/notifications.utils';
 
 import axios from 'axios';
 
-const StripeButton = ({ price }) => {
+import { clearCart } from '../../actions/cartActions';
+
+const StripeButton = ({ price, clearCart, history }) => {
   const priceForStripe = price * 100;
   const publishableKey = 'pk_test_4gu0fGuFiI84EiPVCku1iKQK';
 
   const onToken = token => {
     axios.post('payments', { token, amount: priceForStripe })
       .then(res => {
+        clearCart();
+        history.push('/');
         addNotification('Success!', 'Your payment was successful!', 'success', 'top', 'top-center', 'fadeIn', 'fadeOut', 5000, true);
       }).catch(err => {
         addNotification(
@@ -46,4 +53,8 @@ const StripeButton = ({ price }) => {
   )
 }
 
-export default StripeButton;
+const mapDispatchToProps = dispatch => ({
+  clearCart: () => dispatch(clearCart()),
+});
+
+export default withRouter(connect(null, mapDispatchToProps)(StripeButton));
