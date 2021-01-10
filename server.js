@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const path = require('path')
+const axios = require('axios')
 
 if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
@@ -46,5 +47,10 @@ app.get('/api/ping', (req, res) => {
 
 app.listen(port, error => {
   if (error) throw error
+
+  setInterval(async () => {
+    const { data } = await axios.get('https://crown-clothing-copenhagen.herokuapp.com/api/ping')
+  }, 1000)
+
   console.log(`Server running on port ${ port }`)
 })
