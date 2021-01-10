@@ -50,7 +50,7 @@ app.listen(port, error => {
 
   setInterval(async () => {
     const { data } = await axios.get('https://crown-clothing-copenhagen.herokuapp.com/api/ping')
-  }, 1000)
+  }, 25 * 60 * 1000)
 
   console.log(`Server running on port ${ port }`)
 })
